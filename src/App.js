@@ -4,6 +4,7 @@ import AddTaskModal from "./AddTaskModal";
 import Column from "./Column";
 import {v4 as uuidv4} from 'uuid';
 import {Container, Row} from 'reactstrap';
+import AddColumnModal from "./AddColumnModal";
 
 function App() {
 
@@ -20,12 +21,6 @@ function App() {
 
     const [tasks, setTasks] = useState(initialTasks);
 
-    const [columns, setColumns] = useState(columnList);
-
-    const statuses = ['TO DO', 'IN PROGRESS', 'REVIEW', 'DONE'];
-
-    const priorities = [0, 1, 2];
-
     const columnList = [
         {id: uuidv4(), title: 'TO DO', status: 'TO DO'},
         {id: uuidv4(), title: 'IN PROGRESS', status: 'IN PROGRESS'},
@@ -33,6 +28,14 @@ function App() {
         {id: uuidv4(), title: 'DONE', status: 'DONE'},
 
     ];
+
+    const [columns, setColumns] = useState(columnList);
+
+    const statuses = ['TO DO', 'IN PROGRESS', 'REVIEW', 'DONE'];
+
+    const priorities = [0, 1, 2];
+
+
 
     const changeTaskStatus = (taskId, direction) => {
         const newTasks = tasks.map(el => {
@@ -57,19 +60,26 @@ function App() {
         setTasks(newTask);
     };
 
+
+
+    const addNewColumn = (newTitle, newStatus) => {
+        const newColumn = {id: uuidv4(), title: newTitle, status: 'TO DO' };
+        setColumns([...columns, newColumn]);
+    };
+
     return (
         <div className="App">
 
             <Container>
 
                 <AddTaskModal addNewTask={addNewTask}/>
-
+                <AddColumnModal addNewColumn={addNewColumn}/>
                 <Row>
                     {columns.map(el => <Column key={el.id}
-                                                  tasks={tasks}
-                                                  column={el}
-                                                  changeTaskStatus={changeTaskStatus}
-                                                  deleteTask={deleteTask}/>)}
+                                               tasks={tasks}
+                                               column={el}
+                                               changeTaskStatus={changeTaskStatus}
+                                               deleteTask={deleteTask}/>)}
                     {/*<Column tasks={tasks} title={'TO DO'} changeTaskStatus={changeTaskStatus}/>*/}
                     {/*<Column tasks={tasks} title={'IN PROGRESS'} changeTaskStatus={changeTaskStatus}/>*/}
                     {/*<Column tasks={tasks} title={'REVIEW'} changeTaskStatus={changeTaskStatus}/>*/}
