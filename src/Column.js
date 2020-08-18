@@ -4,7 +4,7 @@ import Task from "./Task";
 
 function Column(props) {
 
-  const {tasks, column, changeTaskStatus, deleteTask} = props;
+  const {tasks, column, changeTaskStatus, deleteTask, editTodo} = props;
 
   return (
       <div>
@@ -15,7 +15,8 @@ function Column(props) {
               .map(el => <Task key={el.id}
                                task={el}
                                changeTaskStatus={changeTaskStatus}
-                               deleteTask={deleteTask}/>)}
+                               deleteTask={deleteTask}
+                               editTodo={editTodo}/>)}
 
         </Col>
 

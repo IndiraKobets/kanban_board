@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Alert, Button, Card, CardBody, Col} from 'reactstrap';
 
 function Task(props) {
+    const {task, changeTaskStatus, deleteTask, editTodo} = props;
 
-    const {task, changeTaskStatus, deleteTask} = props;
+    const [editTask, setEditTask] = useState(task.name);
+    const [isEditMode, setIsEditMode] = useState(false);
 
     const alertColors = ['success', 'warning', 'danger'];
 
     const onDelete = () => {
         deleteTask(task.id);
     };
+
+    const editButtonHandler = () => {
+        editTodo(task.id, editTask);
+        setIsEditMode(false);
+    };
+
     return (
         <div>
             <Col>
@@ -17,6 +25,17 @@ function Task(props) {
                     <Card>
                         <CardBody>
                             {task.name}
+                            {isEditMode ? (
+                                <>
+                                    <input type="text" value={editTask} onChange={e => setEditTask(e.target.value)}/>
+                                    <button onClick={editButtonHandler}>Save</button>
+                                </>
+                            ) : (
+                                <>
+                                    <button onClick={() => setIsEditMode(true)}>Edit</button>
+                                </>
+                            )}
+
 
                             <Alert color={alertColors[task.priority]}>
                                 {task.priority}

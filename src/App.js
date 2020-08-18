@@ -67,6 +67,15 @@ function App() {
         setColumns([...columns, newColumn]);
     };
 
+    const editTodo = (id, newName) => {
+        const newList = [...tasks].map(el => {
+                if (el.id === id)
+                    return {...el, name: newName}
+                return el
+            })
+            setTasks(newList);
+
+    }
     return (
         <div className="App">
 
@@ -79,7 +88,8 @@ function App() {
                                                tasks={tasks}
                                                column={el}
                                                changeTaskStatus={changeTaskStatus}
-                                               deleteTask={deleteTask}/>)}
+                                               deleteTask={deleteTask}
+                                               editTodo={editTodo}/>)}
                     {/*<Column tasks={tasks} title={'TO DO'} changeTaskStatus={changeTaskStatus}/>*/}
                     {/*<Column tasks={tasks} title={'IN PROGRESS'} changeTaskStatus={changeTaskStatus}/>*/}
                     {/*<Column tasks={tasks} title={'REVIEW'} changeTaskStatus={changeTaskStatus}/>*/}
