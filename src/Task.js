@@ -49,13 +49,16 @@ function Task(props) {
                                     <Button size="sm" onClick={editButtonHandler}>Save</Button>
                                 </>
                             ) : (
-                                <>  {task.name}
-                                    <Button size="sm" onClick={() => setIsEditMode(true)}>{pen}</Button>
+                                <>
+                                    {task.name}
+                                    <div>
+                                        <Button size="sm" onClick={() => setIsEditMode(true)}>{pen}</Button>
+                                        <Button size="sm" onClick={onDelete}>{trash}</Button>
+                                    </div>
                                 </>
                             )}
 
-                            <Button size="sm" onClick={onDelete}>{trash}</Button>
-
+                            <hr/>
                             <Alert color={alertColors[task.priority]}>
                                 {task.priority}
                                 {task.priority !== 2 &&
@@ -65,7 +68,6 @@ function Task(props) {
                                 {task.priority !== 0 &&
                                 <Button size="sm" onClick={() => changeTaskStatus(task.id, 'down')}>↓</Button>}
                             </Alert>
-
 
 
                         </CardBody>
