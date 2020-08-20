@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/kanban_board/static/css/main.5f361e03.chunk.css",
+    "main.js": "/kanban_board/static/js/main.a2009249.chunk.js",
+    "main.js.map": "/kanban_board/static/js/main.a2009249.chunk.js.map",
+    "runtime-main.js": "/kanban_board/static/js/runtime-main.6788f13d.js",
+    "runtime-main.js.map": "/kanban_board/static/js/runtime-main.6788f13d.js.map",
+    "static/css/2.11829350.chunk.css": "/kanban_board/static/css/2.11829350.chunk.css",
+    "static/js/2.7f3d5aa1.chunk.js": "/kanban_board/static/js/2.7f3d5aa1.chunk.js",
+    "static/js/2.7f3d5aa1.chunk.js.map": "/kanban_board/static/js/2.7f3d5aa1.chunk.js.map",
+    "index.html": "/kanban_board/index.html",
+    "precache-manifest.40cbfec3d3318bae18d348afcae881a9.js": "/kanban_board/precache-manifest.40cbfec3d3318bae18d348afcae881a9.js",
+    "service-worker.js": "/kanban_board/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/kanban_board/static/css/2.11829350.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/kanban_board/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.7f3d5aa1.chunk.js.LICENSE.txt": "/kanban_board/static/js/2.7f3d5aa1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6788f13d.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.7f3d5aa1.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.a2009249.chunk.js"
+  ]
+}
